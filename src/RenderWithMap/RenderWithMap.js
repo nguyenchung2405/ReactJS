@@ -29,29 +29,29 @@ export default class RenderWithMap extends Component {
         // return arrDivProduct;
 
         const contentJSX = this.productList.map((product, index) => {
-            return <div className="col-4">
-                <div className="card text-left">
-                    <img className="card-img-top" src={product.img} alt />
-                    <div className="card-body">
-                        <h4 className="card-title">{product.name}</h4>
-                        <p className="card-text">{product.price}</p>
+            return (
+                <div key={index} className="col-4">
+                    <div className="card text-left">
+                        <img className="card-img-top" src={product.img} alt="image" />
+                        <div className="card-body">
+                            <h4 className="card-title">{product.name}</h4>
+                            <p className="card-text">{product.price}</p>
+                        </div>
                     </div>
-                </div>
-            </div>;
+                </div>)
         });
         return contentJSX;
     }
 
     renderTableProduct = () => {
-        const contentJSX = this.productList.map((product, index) => {
-            return <tr>
+        return this.productList.map((product, index) => {
+            return <tr key={index}>
                 <td>{product.id}</td>
                 <td>{product.name}</td>
-                <td><img src={product.img} /></td>
+                <td><img src={product.img} width="50px" alt="image" /></td>
                 <td>{product.price}</td>
             </tr>
         });
-        return contentJSX;
     }
 
 
@@ -77,7 +77,6 @@ export default class RenderWithMap extends Component {
                         </tbody>
                     </table>
                 </div>
-
             </div>
         )
     }
