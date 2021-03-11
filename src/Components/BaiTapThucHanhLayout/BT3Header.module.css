@@ -1,0 +1,9 @@
+
+header p {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+header {
+    margin-top: 6rem !important;
+}

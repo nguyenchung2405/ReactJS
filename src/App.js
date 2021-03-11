@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import BT3Footer from "./Components/BaiTapThucHanhLayout/BT3Footer";
+import BT3Header from "./Components/BaiTapThucHanhLayout/BT3Header";
+import BT3Navbar from "./Components/BaiTapThucHanhLayout/BT3Navbar";
+import BT3ProductList from "./Components/BaiTapThucHanhLayout/BT3ProductList";
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <BT3Navbar />
+        <BT3Header />
+        <BT3ProductList />
+      </div>
+      <BT3Footer />
     </div>
+
   );
 }
 
