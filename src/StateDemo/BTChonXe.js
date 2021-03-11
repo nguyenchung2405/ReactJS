@@ -6,7 +6,7 @@ export default class BTChonXe extends Component {
         srcImg: './img/car/products/black-car.jpg'
     }
 
-    changColor = (newColor) => {
+    changeColor = (newColor) => {
         this.setState({ srcImg: `./img/car/products/${newColor}-car.jpg` });
     }
 
@@ -22,17 +22,17 @@ export default class BTChonXe extends Component {
                         <div className="row">
                             <div className="col-3">
                                 <button style={{ backgroundColor: 'black', cursor: 'pointer', color: 'white' }} onClick={() => {
-                                    this.changColor('black')
+                                    this.changeColor('black')
                                 }}>black car</button>
                             </div>
                             <div className="col-3">
-                                <button style={{ backgroundColor: 'red', cursor: 'pointer' }} onClick={() => { this.changColor('red') }}>red car</button>
+                                <button style={{ backgroundColor: 'red', cursor: 'pointer' }} onClick={() => { this.changeColor('red') }}>red car</button>
                             </div>
                             <div className="col-3">
-                                <button style={{ backgroundColor: 'silver', cursor: 'pointer' }} onClick={() => { this.changColor('silver') }}>silver car</button>
+                                <button style={{ backgroundColor: 'silver', cursor: 'pointer' }} onClick={() => { this.changeColor('silver') }}>silver car</button>
                             </div>
                             <div className="col-3">
-                                <button style={{ backgroundColor: 'gray', cursor: 'pointer' }} onClick={() => { this.changColor('steel') }}>gray car</button>
+                                <button style={{ backgroundColor: 'gray', cursor: 'pointer' }} onClick={() => { this.changeColor('steel') }}>gray car</button>
                             </div>
                         </div>
                     </div>
