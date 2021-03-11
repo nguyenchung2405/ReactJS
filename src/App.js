@@ -1,10 +1,12 @@
-import BTChonXe from "./StateDemo/BTChonXe";
+import RenderWithMap from "./RenderWithMap/RenderWithMap";
+// import BTChonXe from "./StateDemo/BTChonXe";
 
 
 function App() {
   return (
     <div>
-      <BTChonXe />
+      {/* <BTChonXe /> */}
+      <RenderWithMap />
     </div>
 
   );
