@@ -1,18 +1,11 @@
-// import RenderWithMap from "./RenderWithMap/RenderWithMap";
-// import BTChonXe from "./StateDemo/BTChonXe";
+import TryGlasses from "./Components/BT_Glass/TryGlasses";
 
-import DanhSachSanPhamProps from "./Props/DemoProps/DanhSachSanPhamProps";
-
-// import BaiTapLayoutMap from "./RenderWithMap/BaiTapLayoutMap";
 
 
 function App() {
   return (
     <div>
-      {/* <BTChonXe /> */}
-      {/* <RenderWithMap /> */}
-      {/* <BaiTapLayoutMap /> */}
-      <DanhSachSanPhamProps />
+      <TryGlasses />
     </div>
 
   );
