@@ -1,0 +1,17 @@
+/* #bg-img { 
+    background-image: url('./glassesImage/background.jpg');
+    min-height: 100vh;
+} */
+
+div.bg-dark p {
+    color: red !important;
+    margin: 0;
+}
+
+.col-6 img {
+    width: 250px;
+}
+
+#bg-img .row {
+    margin-top: 150px;
+}
