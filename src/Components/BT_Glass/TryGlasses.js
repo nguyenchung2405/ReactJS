@@ -29,16 +29,14 @@ export default class TryGlasses extends Component {
 
     state = {
         ThuKinh: {
-            srcImage: './glassesImage/v1.png',
-            desc: 'Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. '
         }
 
     }
 
-    thayDoiKinh = (idKinh) => {
-        let kinhMoi = this.arrProduct.find(sp => sp.id === idKinh);
+    thayDoiKinh = (KinhClick) => {
+        console.log(KinhClick);
         this.setState({
-            ThuKinh.srcImage : kinhMoi.srcImage
+            ThuKinh: KinhClick
         })
     }
 
@@ -46,8 +44,8 @@ export default class TryGlasses extends Component {
         return (
             <div id="bg-img">
                 <Header />
-                <Models />
-                <ProducList arrProduct={this.arrProduct} />
+                <Models ThuKinh={this.state.ThuKinh} />
+                <ProducList arrProduct={this.arrProduct} thayDoiKinh={this.thayDoiKinh} />
             </div>
         )
     }
