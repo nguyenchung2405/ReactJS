@@ -34,7 +34,6 @@ export default class TryGlasses extends Component {
     }
 
     thayDoiKinh = (KinhClick) => {
-        console.log(KinhClick);
         this.setState({
             ThuKinh: KinhClick
         })

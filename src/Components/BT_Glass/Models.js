@@ -11,6 +11,10 @@ export default class Models extends Component {
                         <div className='model__glass'>
                             <img src={ThuKinh.url} />
                         </div>
+                        <div className="glass__desc">
+                            <h5>{ThuKinh.name}</h5>
+                            <p>{ThuKinh.desc}</p>
+                        </div>
                     </div>
                     <div className="col-6 text-center">
                         <img src="./glassesImage/model.jpg" alt="model" />
