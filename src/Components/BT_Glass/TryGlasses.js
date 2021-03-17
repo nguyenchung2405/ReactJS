@@ -28,11 +28,18 @@ export default class TryGlasses extends Component {
     ];
 
     state = {
-        srcImage: './glassesImage/v1.png'
+        ThuKinh: {
+            srcImage: './glassesImage/v1.png',
+            desc: 'Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. '
+        }
+
     }
 
     thayDoiKinh = (idKinh) => {
-
+        let kinhMoi = this.arrProduct.find(sp => sp.id === idKinh);
+        this.setState({
+            ThuKinh.srcImage : kinhMoi.srcImage
+        })
     }
 
     render() {
