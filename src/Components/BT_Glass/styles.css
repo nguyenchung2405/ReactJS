@@ -1,6 +1,12 @@
 /* #bg-img { 
-    background-image: url('./glassesImage/background.jpg');
-    min-height: 100vh;
+    /* background-image: url('./glassesImage/background.jpg'); */
+    /* min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
 } */
 
 div.bg-dark p {
@@ -14,4 +20,27 @@ div.bg-dark p {
 
 #bg-img .row {
     margin-top: 150px;
+}
+
+.productList img {
+    border: 1px solid gray;
+    margin-right: 10px;
+    padding: 3px 5px;
+    width: 150px;
+    cursor: pointer;
+}
+
+.productList {
+    flex-wrap: wrap;
+}
+
+.left {
+    position: relative;
+}
+
+.left .model__glass {
+    position: absolute;
+    top: 29%;
+    left: 50%;
+    transform: translateX(-50%);
 }
