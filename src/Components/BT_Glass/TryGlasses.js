@@ -45,7 +45,7 @@ export default class TryGlasses extends Component {
                 <Header />
                 <Models ThuKinh={this.state.ThuKinh} />
                 <ProducList arrProduct={this.arrProduct} thayDoiKinh={this.thayDoiKinh} />
-            </div>
+            </div >
         )
     }
 }
