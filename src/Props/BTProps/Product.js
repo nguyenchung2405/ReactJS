@@ -122,6 +122,32 @@ export default class Product extends Component {
 
     tangGiamSoLuong = (maSP, soLuong) => {
         console.log(maSP, soLuong);
+        let gioHangCapNhat = [...this.state.gioHang];
+        // Dùng FindIndex
+        // let index = gioHangCapNhat.findIndex(spGioHang => spGioHang.maSP === maSP);
+        // if (index !== -1) {
+        //     gioHangCapNhat[index].soLuong += soLuong;
+        //     if (gioHangCapNhat[index].soLuong === 0) {
+        //         this.xoaGioHang(maSP);
+        //     } else {
+        //         this.setState({
+        //             gioHang: gioHangCapNhat
+        //         })
+        //     }
+        // }
+        // Dùng Find
+        let spGioHang = gioHangCapNhat.find(spGH => spGH.maSP === maSP);
+        if (spGioHang) {
+            spGioHang.soLuong += soLuong;
+            if (spGioHang.soLuong === 0) {
+                alert('Số lượng ít nhất là 1.');
+                spGioHang.soLuong -= soLuong;
+            } else {
+                this.setState({
+                    gioHang: gioHangCapNhat
+                })
+            }
+        }
     }
 
     viewDetail = (itemClick) => {
