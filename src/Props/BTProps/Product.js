@@ -60,6 +60,23 @@ export default class Product extends Component {
         },
         gioHang: []
     }
+    // Phương thức thay đổi State đặt tại component chứa State
+    xoaGioHang = (maSanPham) => {
+        console.log(maSanPham);
+        // Tạo ra biến giỏ hảng cập nhật
+        let gioHangCapNhat = [...this.state.gioHang];
+
+        // Tìm phẩn tử đó trong mảng
+        let index = gioHangCapNhat.findIndex(spGH => spGH.maSP === maSanPham);
+        // Nếu tìm thấy
+        if (index !== -1) {
+            gioHangCapNhat.splice(index, 1);
+        }
+        // Cập nhật lại giỏ hàng
+        this.setState({
+            gioHang: gioHangCapNhat
+        })
+    }
 
     themGioHang = (spClick) => {
         console.log(spClick);
@@ -103,6 +120,10 @@ export default class Product extends Component {
         })
     }
 
+    tangGiamSoLuong = (maSP, soLuong) => {
+        console.log(maSP, soLuong);
+    }
+
     viewDetail = (itemClick) => {
         console.log('itemClick', itemClick);
 
@@ -115,7 +136,7 @@ export default class Product extends Component {
         let { tenSP, hinhAnh, manHinh, heDieuHanh, cameraTruoc, cameraSau, ram, rom } = this.state.productDetail;
         return (
             <div className="container">
-                <Carts gioHang={this.state.gioHang} />
+                <Carts gioHang={this.state.gioHang} xoaGioHang={this.xoaGioHang} tangSoLuong={this.tangSoLuong} giamSoLuong={this.giamSoLuong} tangGiamSoLuong={this.tangGiamSoLuong} />
                 <h3 className="text-center">Danh sách sản phẩm</h3>
                 <div className="row">
                     {this.renderProduct()}

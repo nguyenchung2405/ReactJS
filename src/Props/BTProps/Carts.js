@@ -5,14 +5,28 @@ export default class Carts extends Component {
     renderGioHang = () => {
         let { gioHang } = this.props;
         return gioHang.map((item, index) => {
-            return <tr>
+            return <tr key={index}>
                 <td>{item.maSP}</td>
                 <td><img src={item.hinhAnh} width='50px' /></td>
                 <td>{item.tenSP}</td>
-                <td>{item.soLuong}</td>
+                <td>
+                    <span style={{ marginRight: '8px', cursor: 'pointer' }} onClick={() => {
+                        this.props.tangGiamSoLuong(item.maSP, -1)
+                    }}>
+                        <i class="fas fa-minus"></i>
+                    </span>
+                    {item.soLuong}
+                    <span style={{ marginLeft: '8px', cursor: 'pointer' }} onClick={() => {
+                        this.props.tangGiamSoLuong(item.maSP, 1)
+                    }}>
+                        <i class="fas fa-plus"></i>
+                    </span>
+                </td>
                 <td>{item.gia}</td>
                 <td>{item.soLuong * item.gia}</td>
-                <td><button className='btn btn-danger'>Xóa</button></td>
+                <td><button className='btn btn-danger' onClick={() => {
+                    this.props.xoaGioHang(item.maSP)
+                }} >Xóa</button></td>
             </tr>
         });
     }
