@@ -1,6 +1,7 @@
 // import RenderWithMap from "./RenderWithMap/RenderWithMap";
 // import BTChonXe from "./StateDemo/BTChonXe";
 
+import BTGioHangRedux from "./DemoRedux/BTGioHangRedux/BTGioHangRedux";
 import Product from "./Props/BTProps/Product";
 
 // import DanhSachSanPhamProps from "./Props/DemoProps/DanhSachSanPhamProps";
@@ -10,13 +11,14 @@ import Product from "./Props/BTProps/Product";
 
 function App() {
   return (
-    <div>
+    <>
       {/* <BTChonXe /> */}
       {/* <RenderWithMap /> */}
       {/* <BaiTapLayoutMap /> */}
       {/* <DanhSachSanPhamProps /> */}
-      <Product />
-    </div>
+      {/* <Product /> */}
+      <BTGioHangRedux />
+    </>
 
   );
 }

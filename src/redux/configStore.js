@@ -1,7 +1,7 @@
-import { combineReducers, createStore } from 'redux';
+import { combineReducers } from 'redux';
 
-const store = combineReducers({
+const rootReducer = combineReducers({
     // Nơi chứa toàn bộ State của ứng dụng
 })
 
-export const store = createStore(rootReducer);
+export default rootReducer;
