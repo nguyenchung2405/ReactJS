@@ -22,8 +22,8 @@ export default class Carts extends Component {
                         <i class="fas fa-plus"></i>
                     </span>
                 </td>
-                <td>{item.gia}</td>
-                <td>{item.soLuong * item.gia}</td>
+                <td>{item.gia.toLocaleString()}</td>
+                <td>{(item.soLuong * item.gia).toLocaleString()}</td>
                 <td><button className='btn btn-danger' onClick={() => {
                     this.props.xoaGioHang(item.maSP)
                 }} >Xóa</button></td>
