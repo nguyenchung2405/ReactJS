@@ -47,9 +47,9 @@ export default class BTGioHangRedux extends Component {
 
     renderSanPham = () => {
         return this.arrProduct.map((sanPham, index) => {
-            return <div className='col-4'>
+            return <>
                 <SanPhamRedux sanPham={sanPham} />
-            </div>
+            </>
         })
     }
     render() {

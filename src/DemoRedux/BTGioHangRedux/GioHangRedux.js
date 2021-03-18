@@ -1,12 +1,49 @@
 import React, { Component } from 'react'
+// Kết nối component với store từ redux
+import { connect } from 'react-redux';
 
-export default class GioHangRedux extends Component {
+
+class GioHangRedux extends Component {
+
+    renderGioHang = () => {
+        return this.props.gioHang.map((spGH, index) => {
+            return <tr>
+                <td>{spGH.maSP}</td>
+            </tr>
+        })
+    }
+
     render() {
-
+        console.log(this.props);
         return (
-            <div>
-
+            <div className="container">
+                <h1>Giỏ hàng (1)</h1>
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <th>Mã sản phẩm</th>
+                            <th>Hình ảnh</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Số lượng</th>
+                            <th>Đơn giá</th>
+                            <th>Thành tiền</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.renderGioHang()}
+                    </tbody>
+                </table>
             </div>
         )
     }
 }
+
+const mapStateToProps = (rootReducer) => {
+    // Hàm này tạo ra props từ state/rootReducer của redux
+    return {
+        gioHang: rootReducer.gioHangReducer.gioHang
+    }
+}
+// Biến đổi BaiTapGioHangRedux thành BaiTapGioHang có kết nối với Redux
+export default connect(mapStateToProps)(GioHangRedux);
