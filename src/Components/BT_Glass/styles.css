@@ -1,13 +1,14 @@
-/* #bg-img { 
-    background-image: url('./glassesImage/background.jpg');
+#bg-img { 
+    background-image: url('../../assets/img/background.jpg');
     min-height: 100vh;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:100%;
+    background-position: center;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%; 
-} */
+}
 
 div.bg-dark p {
     padding: 10px;
