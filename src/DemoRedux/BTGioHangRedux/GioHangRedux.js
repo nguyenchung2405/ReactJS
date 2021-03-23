@@ -32,7 +32,6 @@ class GioHangRedux extends Component {
     }
 
     render() {
-        console.log(this.props);
         return (
             <div className="container">
                 <h1>Giỏ hàng (1)</h1>
