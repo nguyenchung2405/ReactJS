@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
-export default class SanPhamRedux extends Component {
+class SanPhamRedux extends Component {
 
     render() {
         let { sanPham } = this.props;
@@ -16,3 +17,6 @@ export default class SanPhamRedux extends Component {
         )
     }
 }
+
+// Kết nối dữ liệu đến store
+export default connect()(SanPhamRedux)

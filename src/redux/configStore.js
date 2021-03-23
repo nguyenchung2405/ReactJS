@@ -1,15 +1,9 @@
 import { combineReducers } from 'redux';
-
-
-const stateDefault = {
-    gioHang: [{ maSP: 1 }]
-}
+import { gioHangReducer } from './reducers/gioHangReducer';
 
 const rootReducer = combineReducers({
     // Nơi chứa toàn bộ State của ứng dụng
-    gioHangReducer: (state = stateDefault) => {
-        return state;
-    }
+    gioHangReducer: gioHangReducer
     // State A: ()=>{}
     // State B: ()=>{}
 })
