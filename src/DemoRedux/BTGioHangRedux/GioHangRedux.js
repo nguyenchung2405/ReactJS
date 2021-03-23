@@ -7,11 +7,27 @@ class GioHangRedux extends Component {
 
     renderGioHang = () => {
         return this.props.gioHangProps.map((spGH, index) => {
-            return <tr>
+            return <tr key={index} >
                 <td>{spGH.maSP}</td>
-                <td><img src={spGH.hinhAnh} /></td>
+                <td><img height='50px' src={spGH.hinhAnh} /></td>
                 <td>{spGH.tenSP}</td>
-            </tr>
+                <td>
+                    <button className='btn' onClick={() => {
+                        this.props.tangGiamSoLuong(spGH.maSP, -1);
+                    }}><i class="fas fa-minus"></i></button>
+                    {spGH.soLuong}
+                    <button className='btn' onClick={() => {
+                        this.props.tangGiamSoLuong(spGH.maSP, 1);
+                    }}><i class="fas fa-plus"></i></button>
+                </td>
+                <td>{(spGH.gia).toLocaleString()} VNĐ</td>
+                <td>{(spGH.gia * spGH.soLuong).toLocaleString()} VNĐ</td>
+                <td>
+                    <button className='btn btn-danger' onClick={() => {
+                        this.props.xoaGioHang(spGH.maSP)
+                    }} >Xóa</button>
+                </td>
+            </tr >
         })
     }
 
@@ -47,5 +63,26 @@ const mapStateToProps = (rootReducer) => {
         gioHangProps: rootReducer.gioHangReducer.gioHang
     }
 }
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        xoaGioHang: (maSP) => {
+            console.log(maSP);
+            const action = {
+                type: 'XOA_SP_GIO_HANG',
+                maSP,
+            };
+            dispatch(action);
+        },
+        tangGiamSoLuong: (maSP, soLuong) => {
+            const action = {
+                type: 'TANG_GIAM_SO_LUONG',
+                maSP,
+                soLuong
+            };
+            dispatch(action);
+        }
+    }
+}
 // Biến đổi BaiTapGioHangRedux thành BaiTapGioHang có kết nối với Redux
-export default connect(mapStateToProps)(GioHangRedux);
+export default connect(mapStateToProps, mapDispatchToProps)(GioHangRedux);
