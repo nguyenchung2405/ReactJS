@@ -1,8 +1,7 @@
 // import RenderWithMap from "./RenderWithMap/RenderWithMap";
 // import BTChonXe from "./StateDemo/BTChonXe";
 
-import BTGioHangRedux from "./DemoRedux/BTGioHangRedux/BTGioHangRedux";
-import Product from "./Props/BTProps/Product";
+import BaiTapDatVe from "./DemoRedux/BaiTapRedux/BaiTapDatVe/BaiTapDatVe";
 
 // import DanhSachSanPhamProps from "./Props/DemoProps/DanhSachSanPhamProps";
 
@@ -17,7 +16,8 @@ function App() {
       {/* <BaiTapLayoutMap /> */}
       {/* <DanhSachSanPhamProps /> */}
       {/* <Product /> */}
-      <BTGioHangRedux />
+      {/* <BTGioHangRedux /> */}
+      <BaiTapDatVe />
     </>
 
   );
