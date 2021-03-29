@@ -25,11 +25,15 @@ class DanhSachDatGhe extends Component {
                     </thead>
                     <tbody>
                         {this.props.danhSachGheDangDat.map((ghe, index) => {
-                            return <tr key={index}>
-                                <td>{ghe.soGhe}</td>
-                                <td>{ghe.gia}</td>
-                                <td><button className='btn btn-danger'>X</button></td>
-                            </tr>
+                            if (ghe !== {}) {
+                                return <tr key={index}>
+                                    <td>{ghe.soGhe}</td>
+                                    <td>{ghe.gia}</td>
+                                    <td><button className='btn btn-danger'>X</button></td>
+                                </tr>
+                            }
+                            return <></>;
+                            // return console.log(ghe);
                         })}
                     </tbody>
                 </table>

@@ -23,7 +23,9 @@ class DanhSachGhe extends Component {
             }
             let classGheDuocChon = ghe.daDat ? 'gheDuocChon' : '';
             if (hangGhe !== '') {
-                return <button key={index} className={`ghe mt-1 ${classGheDuocChon} ${classGheDangDat}`}>{ghe.soGhe}</button>
+                return <button key={index} className={`ghe mt-1 ${classGheDuocChon} ${classGheDangDat}`} onClick={() => {
+                    this.props.Chon(ghe);
+                }}>{ghe.soGhe}</button>
             }
             return <button key={index} className={`rowNumber ${classGheDuocChon} ${classGheDangDat}`}>{ghe.soGhe}</button>
         })
@@ -51,4 +53,16 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, null)(DanhSachGhe);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        Chon: (ghe) => {
+            const action = {
+                type: 'GHE_DANG_CHON',
+                ghe,
+            }
+            dispatch(action);
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(DanhSachGhe);
