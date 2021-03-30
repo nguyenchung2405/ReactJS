@@ -8,7 +8,7 @@ export const baiTapDatVeReducer = (state = stateDefault, action) => {
             let danhSachGheDangDatUpdate = [...state.danhSachGheDangDat];
             let index = danhSachGheDangDatUpdate.findIndex(ghe => ghe.soGhe === action.ghe.soGhe);
             if (action.ghe.daDat !== false) {
-                alert('Ghế này đã được đặt. Vui lòng chọn ghế khác.');
+                alert('Ghế này đã được đặt.\n\Vui lòng chọn ghế khác.');
                 return { ...state };
             }
             if (index !== -1) {
@@ -20,6 +20,15 @@ export const baiTapDatVeReducer = (state = stateDefault, action) => {
                 state.danhSachGheDangDat = danhSachGheDangDatUpdate;
                 return { ...state };
             }
+        }
+        case 'XOA_GHE': {
+            let danhSachGheDangDatUpdate = [...state.danhSachGheDangDat];
+            let index = danhSachGheDangDatUpdate.findIndex(ghe => ghe.soGhe === action.soGhe);
+            if (index !== -1) {
+                danhSachGheDangDatUpdate.splice(index, 1);
+                state.danhSachGheDangDat = danhSachGheDangDatUpdate;
+            }
+            return { ...state };
         }
     }
     return { ...state };

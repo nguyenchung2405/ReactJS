@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 class DanhSachDatGhe extends Component {
     render() {
+        let { dispatch } = this.props;
         return (
             <div className='text-white'>
                 <h1 className='text-center'>Danh sách ghế đang chọn</h1>
@@ -15,7 +16,7 @@ class DanhSachDatGhe extends Component {
                 <div>
                     <button className='gheDuocChon' style={{ cursor: 'pointer' }}></button> Ghế đã chọn
                 </div>
-                <table className='table text-white mt-3'>
+                <table className='table text-white mt-3' data-spy="scroll">
                     <thead>
                         <tr>
                             <th>Số ghế</th>
@@ -29,7 +30,13 @@ class DanhSachDatGhe extends Component {
                                 return <tr key={index}>
                                     <td>{ghe.soGhe}</td>
                                     <td>{ghe.gia}</td>
-                                    <td><button className='btn btn-danger'>X</button></td>
+                                    <td><button className='btn btn-danger' onClick={() => {
+                                        const action = {
+                                            type: 'XOA_GHE',
+                                            soGhe: ghe.soGhe
+                                        };
+                                        dispatch(action);
+                                    }}>X</button></td>
                                 </tr>
                             }
                             return <></>;
@@ -45,5 +52,16 @@ class DanhSachDatGhe extends Component {
 const mapStateToProps = (state) => {
     return { danhSachGheDangDat: state.baiTapDatVeReducer.danhSachGheDangDat }
 };
+
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         Xoa: (ghe) => {
+//             const action = {
+//                 type: 'XOA_GHE',
+//                 ghe,
+//             }
+//         }
+//     }
+// };
 
 export default connect(mapStateToProps, null)(DanhSachDatGhe);

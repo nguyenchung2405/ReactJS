@@ -1,7 +1,8 @@
 // import RenderWithMap from "./RenderWithMap/RenderWithMap";
 // import BTChonXe from "./StateDemo/BTChonXe";
 
-import BaiTapDatVe from "./DemoRedux/BaiTapRedux/BaiTapDatVe/BaiTapDatVe";
+// import BaiTapDatVe from "./DemoRedux/BaiTapRedux/BaiTapDatVe/BaiTapDatVe";
+import FormReact from "./FormReact/FormReact";
 
 // import DanhSachSanPhamProps from "./Props/DemoProps/DanhSachSanPhamProps";
 
@@ -17,7 +18,8 @@ function App() {
       {/* <DanhSachSanPhamProps /> */}
       {/* <Product /> */}
       {/* <BTGioHangRedux /> */}
-      <BaiTapDatVe />
+      {/* <BaiTapDatVe /> */}
+      <FormReact />
     </>
 
   );
