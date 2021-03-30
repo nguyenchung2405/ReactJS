@@ -86,3 +86,22 @@
     height: 35px;
 
 }
+
+.row .col-4 .ghe {
+    margin: 5px 0;
+    border: 3px solid orange;
+    width: 45px;
+    height: 35px;
+    font-size: 12px;
+    margin-left: 0;
+    border-radius: 5px;
+}
+
+.row .col-4 .text-white div {
+    display: flex;
+    align-items: center;
+}
+
+.row .col-4 .text-white div button {
+    margin-right: 5px;
+}

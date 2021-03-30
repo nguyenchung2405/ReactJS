@@ -15,7 +15,7 @@ class DanhSachDatGhe extends Component {
                 <div>
                     <button className='gheDuocChon' style={{ cursor: 'pointer' }}></button> Ghế đã chọn
                 </div>
-                <table className='table text-white'>
+                <table className='table text-white mt-3'>
                     <thead>
                         <tr>
                             <th>Số ghế</th>
