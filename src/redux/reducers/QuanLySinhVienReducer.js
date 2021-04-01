@@ -20,8 +20,7 @@ export default (state = stateDefault, action) => {
             return { ...state };
         }
         case 'SUA_SINH_VIEN': {
-            let sinhVienSuaCapNhat = { ...action.sinhVien };
-            state.sinhVienSua = sinhVienSuaCapNhat;
+            state.sinhVienSua = action.sinhVien;
             return { ...state }
         }
         default:
