@@ -7,8 +7,8 @@ class TableSinhVien extends Component {
         return this.props.mangSinhVien.map((SV, index) => {
             return (
                 <tr key={index}>
-                    <td>{SV.maSV}</td>
-                    <td>{SV.tenSV}</td>
+                    <td>{SV.maSinhVien}</td>
+                    <td>{SV.tenSinhVien}</td>
                     <td>{SV.email}</td>
                     <td>{SV.soDienThoai}</td>
                     <td className='text-center'>

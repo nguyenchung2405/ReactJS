@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import TableSinhVien from './TableSinhVien';
+import { connect } from 'react-redux';
 
-export default class FormReact extends Component {
+class FormReact extends Component {
 
     state = {
         values: {
@@ -77,6 +78,11 @@ export default class FormReact extends Component {
             alert('Dữ liệu không hợp lệ.');
             return;
         }
+        // Hợp lệ thì giở lên redux
+        this.props.dispatch({
+            type: 'THEM_SINH_VIEN',
+            sinhVien: this.state.values,
+        });
         console.log(this.state.values);
     }
 
@@ -125,3 +131,5 @@ export default class FormReact extends Component {
         )
     }
 }
+
+export default connect()(FormReact);
