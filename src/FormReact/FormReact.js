@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import TableSinhVien from './TableSinhVien';
 
 export default class FormReact extends Component {
 
@@ -49,9 +50,39 @@ export default class FormReact extends Component {
         });
     }
 
+    handleSubmit = (event) => {
+        // Cản sự kiện submit của browser
+        event.preventDefault();
+        // Kiểm tra dữ liệu hợp lệ 
+        /*
+            Tất cả key của this.state.values phải khác rỗng
+            Và tất cả các key của this.state.err phải bằng rỗng
+        */
+        let valid = true;
+        let { values, error } = this.state;
+        // (1) Duyệt values
+        for (let key in values) {
+            if (values[key] === '') {
+                valid = false;
+            }
+        }
+        // (2) Duyệt error
+        for (let key in error) {
+            if (error[key] !== '') {
+                valid = false;
+            }
+        }
+
+        if (!valid) {
+            alert('Dữ liệu không hợp lệ.');
+            return;
+        }
+        console.log(this.state.values);
+    }
+
     render() {
         return (
-            <form className='container'>
+            <form className='container' onSubmit={this.handleSubmit}>
                 <div className="card text-white bg-dark">
                     <div className='card-header mx-auto display-4'>Thông tin sinh viên</div>
                     <div className="card-body">
@@ -85,9 +116,11 @@ export default class FormReact extends Component {
                                     <p className='text text-danger'>{this.state.error.email}</p>
                                 </div>
                             </div>
+                            <button className='btn btn-success ml-3'>Thêm sinh viên</button>
                         </div>
                     </div>
                 </div>
+                <TableSinhVien />
             </form>
         )
     }
