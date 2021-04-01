@@ -12,8 +12,19 @@ class TableSinhVien extends Component {
                     <td>{SV.email}</td>
                     <td>{SV.soDienThoai}</td>
                     <td className='text-center'>
-                        <button className='btn btn-secondary mr-3'>Sửa</button>
-                        <button className='btn btn-danger'>Xóa</button>
+                        <button type='button' className='btn btn-secondary mr-3' onClick={() => {
+                            this.props.dispatch({
+                                type: 'SUA_SINH_VIEN',
+                                sinhVien: SV,
+                            })
+                        }}>Sửa</button>
+                        <button type='button' className='btn btn-danger' onClick={() => {
+                            // Gửi mã sinh viên lên reducer
+                            this.props.dispatch({
+                                type: 'XOA_SINH_VIEN',
+                                maSinhVien: SV.maSinhVien,
+                            })
+                        }}>Xóa</button>
                     </td>
                 </tr>
             )

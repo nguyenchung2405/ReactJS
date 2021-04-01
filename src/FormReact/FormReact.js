@@ -87,8 +87,9 @@ class FormReact extends Component {
     }
 
     render() {
+        let { maSinhVien, tenSinhVien, soDienThoai, email } = this.props.sinhVienSua;
         return (
-            <form className='container' onSubmit={this.handleSubmit}>
+            <form className='container mt-5' onSubmit={this.handleSubmit}>
                 <div className="card text-white bg-dark">
                     <div className='card-header mx-auto display-4'>Thông tin sinh viên</div>
                     <div className="card-body">
@@ -97,14 +98,14 @@ class FormReact extends Component {
                                 <div className='form-group'>
                                     <label>Mã sinh viên: </label>
                                     <input className='form-control' type="text" name='maSinhVien' onChange=
-                                        {this.handleChangeInput}
+                                        {this.handleChangeInput} value={maSinhVien}
                                     />
                                     <p className='text text-danger'>{this.state.error.maSinhVien}</p>
                                 </div>
                                 <div className='form-group'>
                                     <label>Số điện thoại: </label>
                                     <input className='form-control' type="text" name='soDienThoai' onChange=
-                                        {this.handleChangeInput} />
+                                        {this.handleChangeInput} value={soDienThoai} />
                                     <p className='text text-danger'>{this.state.error.soDienThoai}</p>
                                 </div>
                             </div>
@@ -112,13 +113,13 @@ class FormReact extends Component {
                                 <div className='form-group'>
                                     <label>Tên sinh viên: </label>
                                     <input className='form-control' type="text" name='tenSinhVien' onChange=
-                                        {this.handleChangeInput} />
+                                        {this.handleChangeInput} value={tenSinhVien} />
                                     <p className='text text-danger'>{this.state.error.tenSinhVien}</p>
                                 </div>
                                 <div className='form-group'>
                                     <label>Email: </label>
                                     <input typeProps='email' className='form-control' type="text" name='email' onChange=
-                                        {this.handleChangeInput} />
+                                        {this.handleChangeInput} value={email} />
                                     <p className='text text-danger'>{this.state.error.email}</p>
                                 </div>
                             </div>
@@ -132,4 +133,10 @@ class FormReact extends Component {
     }
 }
 
-export default connect()(FormReact);
+const mapStateToProps = (state) => {
+    return {
+        sinhVienSua: state.QuanLySinhVienReducer.sinhVienSua
+    }
+}
+
+export default connect(mapStateToProps)(FormReact);
