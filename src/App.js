@@ -21,7 +21,7 @@ function App() {
       {/* <Product /> */}
       {/* <BTGioHangRedux /> */}
       {/* <BaiTapDatVe /> */}
-      <FormReact />
+      {/* <FormReact /> */}
       <LifeCycle />
     </>
 

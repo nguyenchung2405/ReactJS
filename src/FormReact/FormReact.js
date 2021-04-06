@@ -86,8 +86,10 @@ class FormReact extends Component {
         console.log(this.state.values);
     }
 
+    // componentWillReceiveProps chạy sau khi props thay đổi và trước khi render
     componentWillReceiveProps(newProps) { //props mới 
 
+        // Lấy dữ liệu từ props gán cho state
         this.setState({
             values: newProps.sinhVienSua
         })
@@ -95,6 +97,7 @@ class FormReact extends Component {
     }
 
     render() {
+        // Giá trị input trên giao diện luôn luôn lấy từ state
         let { maSinhVien, tenSinhVien, soDienThoai, email } = this.state.values;
         return (
             <form className='container mt-5' onSubmit={this.handleSubmit}>
@@ -132,6 +135,13 @@ class FormReact extends Component {
                                 </div>
                             </div>
                             <button className='btn btn-success ml-3'>Thêm sinh viên</button>
+                            <button type='button' className='btn btn-primary ml-3' onClick={() => {
+                                // Đưa dữ liệu form lên redux
+                                this.props.dispatch({
+                                    type: 'CAP_NHAP_SINH_VIEN',
+                                    sinhVienCapNhat: this.state.values
+                                })
+                            }}>Cập nhật sinh viên</button>
                         </div>
                     </div>
                 </div>

@@ -16,10 +16,12 @@ class TableSinhVien extends Component {
                             this.props.dispatch({
                                 type: 'SUA_SINH_VIEN',
                                 sinhVien: SV,
-                            })
+                            });
+                            document.getElementsByName('maSinhVien')[0].disabled = 'true';
                         }}>Sửa</button>
                         <button type='button' className='btn btn-danger' onClick={() => {
                             // Gửi mã sinh viên lên reducer
+                            document.getElementById('maSV');
                             this.props.dispatch({
                                 type: 'XOA_SINH_VIEN',
                                 maSinhVien: SV.maSinhVien,

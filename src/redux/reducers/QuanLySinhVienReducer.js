@@ -23,6 +23,16 @@ export default (state = stateDefault, action) => {
             state.sinhVienSua = action.sinhVien;
             return { ...state }
         }
+        case 'CAP_NHAP_SINH_VIEN': {
+            let mangSVCapNhat = [...state.mangSinhVien];
+            let index = mangSVCapNhat.findIndex(sv => sv.maSinhVien === action.sinhVienCapNhat.maSinhVien);
+            if (index !== -1) {
+                mangSVCapNhat[index] = { ...action.sinhVienCapNhat };
+            }
+
+            state.mangSinhVien = mangSVCapNhat;
+            return { ...state }
+        }
         default:
             return state
     }
