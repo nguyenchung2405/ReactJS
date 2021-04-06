@@ -86,8 +86,16 @@ class FormReact extends Component {
         console.log(this.state.values);
     }
 
+    componentWillReceiveProps(newProps) { //props mới 
+
+        this.setState({
+            values: newProps.sinhVienSua
+        })
+
+    }
+
     render() {
-        let { maSinhVien, tenSinhVien, soDienThoai, email } = this.props.sinhVienSua;
+        let { maSinhVien, tenSinhVien, soDienThoai, email } = this.state.values;
         return (
             <form className='container mt-5' onSubmit={this.handleSubmit}>
                 <div className="card text-white bg-dark">
